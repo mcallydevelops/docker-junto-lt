@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-RUN_INIT_POP="psql -X -U docker --set ON_ERROR_STOP=on --set AUTOCOMMIT=off grocery"
+RUN_INIT_POP="psql -X -U docker --set ON_ERROR_STOP=on --set AUTOCOMMIT=off workshop"
 
 $RUN_INIT_POP <<SQL
   CREATE TABLE IF NOT EXISTS inventory (
