@@ -12,7 +12,8 @@
 }
 
 .buttons {
-  grid-column: 2
+  grid-column: 2;
+  display: inherit;
 }
 
 button {
@@ -39,6 +40,11 @@ button {
 .button:active {
   top: 0.2rem;
   box-shadow: none;
+}
+
+table {
+  padding: 1rem 0;
+  margin: 0 1rem;
 }
 
 .App-header {

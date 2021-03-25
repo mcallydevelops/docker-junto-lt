@@ -3,12 +3,8 @@ import './App.css';
 
 class App extends React.Component {
   state = {
-    notList: {},
+    errors: {},
     theList: {},
-    conditionals: {
-      isError: false,
-      isCLicked: false
-    }
   }
 
   theClick = () => {
@@ -20,7 +16,11 @@ class App extends React.Component {
             theList: [...prevState.theList, response.json()]
           }
         ))
-      })
+      }
+    )
+    .catch((e) => {
+      console.log(`error: ${e}`)
+    })
   }
 
   render() {
@@ -28,11 +28,25 @@ class App extends React.Component {
       <div className="buttons">
         <button className="button" type="button" onClick={this.theClick}>Get Everything</button>
         { this.state.theList.length > 0 &&
-        <ul>
-          { this.state.theList.map( item => (
-            <li key={item.id}>{item.name}</li>
+        <table>
+          <tbody>
+            <tr>
+              <th>Item</th><th>Price</th>
+            </tr>
+            { this.state.theList.map( item => (
+              <tr key={item.id}>
+                <td>{item.name}</td><td>{item.price}</td>
+              </tr>
           )) }
-        </ul>
+            
+            <tr>
+              <td>clouds</td><td>1.32</td>
+            </tr>
+            <tr>
+              <td>boop</td><td>4.32</td>
+            </tr>
+          </tbody>
+        </table>
         } 
       </div>
     </div>
