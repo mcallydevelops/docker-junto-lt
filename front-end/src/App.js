@@ -25,8 +25,8 @@ class App extends React.Component {
 
   render() {
     return <div className="App">
-      <div className="the-button">
-        <button onClick={this.theClick}>Click Me</button>
+      <div className="buttons">
+        <button className="button" type="button" onClick={this.theClick}>Get Everything</button>
         { this.state.theList.length > 0 &&
         <ul>
           { this.state.theList.map( item => (
