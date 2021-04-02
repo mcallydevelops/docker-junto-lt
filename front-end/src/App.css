@@ -1,0 +1,65 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  padding: 1rem;
+  text-align: left;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 1em
+}
+
+.buttons {
+  grid-column: 2;
+  display: inherit;
+}
+
+button {
+  border: none;
+  padding: 0;
+  margin: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.button {
+  --color-dark: #333;
+  --color-light: #fff;
+  display: block;
+  position: relative;
+  font-size: 2rem;
+  padding: 1rem 2rem;
+  border-radius: 0.4rem;
+  background: var(--color-light);
+  color: var(--color-dark);
+  border: 0.2rem solid var(--color-dark);
+  box-shadow: 0 0.2rem 0 0 var(--color-dark);
+}
+.button:active {
+  top: 0.2rem;
+  box-shadow: none;
+}
+
+table {
+  padding: 1rem 0;
+  margin: 0 1rem;
+}
+
+.App-header {
+  background-color: #939394;
+  min-height: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+.App-header h1 {
+  margin: 1em;
+}
+
+.App-link {
+  color: #61dafb;
+}
