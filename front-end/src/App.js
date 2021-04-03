@@ -8,7 +8,7 @@ class App extends React.Component {
   }
 
   theClick = () => {
-    fetch('localhost:8081/endpoint')
+    fetch('api:8080')
     .then(
       response => {
         this.setState(prevState => (
