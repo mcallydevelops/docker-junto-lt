@@ -4,20 +4,20 @@ import './App.css';
 class App extends React.Component {
   state = {
     errors: {},
-    theList: {},
+    theList: [],
   }
 
   theClick = () => {
-    fetch('api:8080')
-    .then(
-      response => {
-        this.setState(prevState => (
-          {
-            theList: [...prevState.theList, response.json()]
-          }
-        ))
-      }
-    )
+    fetch('/api/')
+    .then(res => res.json())
+    .then(res => {
+      this.setState(prevState => (
+        {
+          theList: res
+        }
+      ))
+      console.log(this.state.theList)
+    })
     .catch((e) => {
       console.log(`error: ${e}`)
     })
@@ -34,17 +34,10 @@ class App extends React.Component {
               <th>Item</th><th>Price</th>
             </tr>
             { this.state.theList.map( item => (
-              <tr key={item.id}>
+              <tr key="{item.id}">
                 <td>{item.name}</td><td>{item.price}</td>
               </tr>
           )) }
-            
-            <tr>
-              <td>clouds</td><td>1.32</td>
-            </tr>
-            <tr>
-              <td>boop</td><td>4.32</td>
-            </tr>
           </tbody>
         </table>
         } 
