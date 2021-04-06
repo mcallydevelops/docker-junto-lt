@@ -1,0 +1,31 @@
+version: "3.9"
+services:
+  frontend:
+    build: ./front-end
+    ports:
+      - 3000:3000
+    container_name: frontend
+    networks:
+      - front-api
+    depends_on:
+      - api
+  api:
+    build: ./api
+    ports:
+      - 8080:8080
+    container_name: api
+    networks:
+      - front-api
+      - api-db
+    depends_on:
+      - db
+  db:
+    build: ./db
+    ports: 
+      - 5432:5432
+    container_name: db
+    networks:
+      - api-db
+networks:
+  front-api:
+  api-db:

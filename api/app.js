@@ -1,14 +1,12 @@
 const express = require('express');
 const app = express();
-const port = 3000;
-
+const port = 8080;
 
 const { Pool } = require('pg');
 
-
 const pool = new Pool({
     user: 'docker',
-    host: 'localhost',
+    host: 'db',
     database: 'workshop',
     password: 'docker',
     port: 5432,
