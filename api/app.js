@@ -12,15 +12,15 @@ const pool = new Pool({
     port: 5432,
 });
 
-// app.get('/hello', (req, res) => {
-//     try {
-//         res.send("Hello World!");
-//     } catch(e) {
-//         console.log(e);
-//         res.status(500).send('Something broke!');
-//     }
-// });
-//
+app.get('/hello', (req, res) => {
+    try {
+        res.send("Hello World!");
+    } catch(e) {
+        console.log(e);
+        res.status(500).send('Something broke!');
+    }
+});
+
 // app.get('/hellob', (req, res) => {
 //     try {
 //         res.send("Hello world without cached build");
