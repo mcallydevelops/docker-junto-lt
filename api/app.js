@@ -21,6 +21,16 @@ const pool = new Pool({
 //     }
 // });
 //
+// app.get('/hellob', (req, res) => {
+//     try {
+//         res.send("Hello world without cached build");
+//     } catch(e) {
+//         console.log(e);
+//         rse.status(500).send('Something broke!');
+//     }
+// });
+//
+//
 // app.get('/helloc', (req, res) => {
 //     try {
 //         res.send("Hello world with cached build");
