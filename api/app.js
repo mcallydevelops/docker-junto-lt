@@ -6,11 +6,29 @@ const { Pool } = require('pg');
 
 const pool = new Pool({
     user: 'docker',
-    host: 'db',
+    host: 'localhost',
     database: 'workshop',
     password: 'docker',
     port: 5432,
 });
+
+// app.get('/hello', (req, res) => {
+//     try {
+//         res.send("Hello World!");
+//     } catch(e) {
+//         console.log(e);
+//         res.status(500).send('Something broke!');
+//     }
+// });
+//
+// app.get('/helloc', (req, res) => {
+//     try {
+//         res.send("Hello world with cached build");
+//     } catch(e) {
+//         console.log(e);
+//         rse.status(500).send('Something broke!');
+//     }
+// });
 
 app.get('/', async (req, res) => {
     try {
@@ -20,7 +38,6 @@ app.get('/', async (req, res) => {
         console.log(e);
         res.status(500).send('Something broke!');
     }
-
 });
 
 app.get('/id/:id', async(req, res) => {
